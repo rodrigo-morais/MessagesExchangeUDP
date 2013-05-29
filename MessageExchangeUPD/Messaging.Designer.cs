@@ -34,14 +34,14 @@
             this.txtConversation = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.grbConnection = new System.Windows.Forms.GroupBox();
-            this.lblMyPort = new System.Windows.Forms.Label();
-            this.txtPort = new System.Windows.Forms.TextBox();
-            this.lblRemoteIP = new System.Windows.Forms.Label();
-            this.txtRemoteIP = new System.Windows.Forms.TextBox();
-            this.lblRemotePort = new System.Windows.Forms.Label();
-            this.txtRemotePort = new System.Windows.Forms.TextBox();
-            this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.txtRemotePort = new System.Windows.Forms.TextBox();
+            this.lblRemotePort = new System.Windows.Forms.Label();
+            this.txtRemoteIP = new System.Windows.Forms.TextBox();
+            this.lblRemoteIP = new System.Windows.Forms.Label();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.lblMyPort = new System.Windows.Forms.Label();
             this.grbConnection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,64 +109,6 @@
             this.grbConnection.TabStop = false;
             this.grbConnection.Text = "Connection";
             // 
-            // lblMyPort
-            // 
-            this.lblMyPort.AutoSize = true;
-            this.lblMyPort.Location = new System.Drawing.Point(6, 26);
-            this.lblMyPort.Name = "lblMyPort";
-            this.lblMyPort.Size = new System.Drawing.Size(46, 13);
-            this.lblMyPort.TabIndex = 0;
-            this.lblMyPort.Text = "My Port:";
-            // 
-            // txtPort
-            // 
-            this.txtPort.Location = new System.Drawing.Point(58, 23);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(82, 20);
-            this.txtPort.TabIndex = 1;
-            // 
-            // lblRemoteIP
-            // 
-            this.lblRemoteIP.AutoSize = true;
-            this.lblRemoteIP.Location = new System.Drawing.Point(175, 26);
-            this.lblRemoteIP.Name = "lblRemoteIP";
-            this.lblRemoteIP.Size = new System.Drawing.Size(60, 13);
-            this.lblRemoteIP.TabIndex = 2;
-            this.lblRemoteIP.Text = "Remote IP:";
-            // 
-            // txtRemoteIP
-            // 
-            this.txtRemoteIP.Location = new System.Drawing.Point(241, 23);
-            this.txtRemoteIP.Name = "txtRemoteIP";
-            this.txtRemoteIP.Size = new System.Drawing.Size(162, 20);
-            this.txtRemoteIP.TabIndex = 2;
-            // 
-            // lblRemotePort
-            // 
-            this.lblRemotePort.AutoSize = true;
-            this.lblRemotePort.Location = new System.Drawing.Point(409, 26);
-            this.lblRemotePort.Name = "lblRemotePort";
-            this.lblRemotePort.Size = new System.Drawing.Size(10, 13);
-            this.lblRemotePort.TabIndex = 4;
-            this.lblRemotePort.Text = ":";
-            // 
-            // txtRemotePort
-            // 
-            this.txtRemotePort.Location = new System.Drawing.Point(425, 23);
-            this.txtRemotePort.Name = "txtRemotePort";
-            this.txtRemotePort.Size = new System.Drawing.Size(82, 20);
-            this.txtRemotePort.TabIndex = 3;
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.Location = new System.Drawing.Point(351, 49);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 23);
-            this.btnConnect.TabIndex = 4;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
             // btnDisconnect
             // 
             this.btnDisconnect.Enabled = false;
@@ -178,8 +120,67 @@
             this.btnDisconnect.UseVisualStyleBackColor = true;
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(351, 49);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 4;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // txtRemotePort
+            // 
+            this.txtRemotePort.Location = new System.Drawing.Point(425, 23);
+            this.txtRemotePort.Name = "txtRemotePort";
+            this.txtRemotePort.Size = new System.Drawing.Size(82, 20);
+            this.txtRemotePort.TabIndex = 3;
+            // 
+            // lblRemotePort
+            // 
+            this.lblRemotePort.AutoSize = true;
+            this.lblRemotePort.Location = new System.Drawing.Point(409, 26);
+            this.lblRemotePort.Name = "lblRemotePort";
+            this.lblRemotePort.Size = new System.Drawing.Size(10, 13);
+            this.lblRemotePort.TabIndex = 4;
+            this.lblRemotePort.Text = ":";
+            // 
+            // txtRemoteIP
+            // 
+            this.txtRemoteIP.Location = new System.Drawing.Point(241, 23);
+            this.txtRemoteIP.Name = "txtRemoteIP";
+            this.txtRemoteIP.Size = new System.Drawing.Size(162, 20);
+            this.txtRemoteIP.TabIndex = 2;
+            // 
+            // lblRemoteIP
+            // 
+            this.lblRemoteIP.AutoSize = true;
+            this.lblRemoteIP.Location = new System.Drawing.Point(175, 26);
+            this.lblRemoteIP.Name = "lblRemoteIP";
+            this.lblRemoteIP.Size = new System.Drawing.Size(60, 13);
+            this.lblRemoteIP.TabIndex = 2;
+            this.lblRemoteIP.Text = "Remote IP:";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(58, 23);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(82, 20);
+            this.txtPort.TabIndex = 1;
+            // 
+            // lblMyPort
+            // 
+            this.lblMyPort.AutoSize = true;
+            this.lblMyPort.Location = new System.Drawing.Point(6, 26);
+            this.lblMyPort.Name = "lblMyPort";
+            this.lblMyPort.Size = new System.Drawing.Size(46, 13);
+            this.lblMyPort.TabIndex = 0;
+            this.lblMyPort.Text = "My Port:";
+            // 
             // Messaging
             // 
+            this.AcceptButton = this.btnSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 388);

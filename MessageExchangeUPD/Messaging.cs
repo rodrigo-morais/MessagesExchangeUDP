@@ -8,6 +8,8 @@ using System.Text;
 using UPDIntegration;
 using System.Timers;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace MessageExchangeUPD
 {
@@ -15,6 +17,7 @@ namespace MessageExchangeUPD
     {
         private UdpConnector connector;
         private System.Timers.Timer verifyMessages;
+        private UdpIntegration udpMessages;
         
         public Messaging()
         {
@@ -29,6 +32,7 @@ namespace MessageExchangeUPD
 
             
             connector = new UdpConnector(remoteIP, remotePort, port);
+            udpMessages = new UdpIntegration(connector);
 
             txtRemoteIP.Enabled = false;
             txtRemotePort.Enabled = false;
@@ -47,6 +51,7 @@ namespace MessageExchangeUPD
 
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
+            udpMessages = null;
             connector.disconnect();
             
             txtRemoteIP.Enabled = true;
@@ -60,15 +65,14 @@ namespace MessageExchangeUPD
             verifyMessages.Enabled = false;
             verifyMessages.Stop();
             verifyMessages = null;
-
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            var senderMessage = new UdpIntegration(connector);
-            senderMessage.send(txtMessage.Text);
-
-            senderMessage = null;
+            udpMessages.send(txtMessage.Text);
+            string header = udpMessages + ":" + txtPort.Text + " (Me) \r\n";
+            txtConversation.AppendText(header);
+            txtConversation.AppendText("  " + txtMessage.Text + " \r\n");
             txtMessage.Text = string.Empty;
 
             txtMessage.Focus();
@@ -76,10 +80,11 @@ namespace MessageExchangeUPD
 
         public void receive(object source, ElapsedEventArgs e)
         {
-            var receiverMessage = new UdpIntegration(connector);
-            byte[] data = receiverMessage.receive();
+            byte[] data = udpMessages.receive();
             string message = Encoding.UTF8.GetString(data, 0, data.Length);
-            txtConversation.Invoke((Action)(() => txtConversation.AppendText(message + " \r\n")));
+            string header = txtRemoteIP.Text + ":" + txtRemotePort.Text + " (Other Computer) \r\n";
+            txtConversation.Invoke((Action)(() => txtConversation.AppendText(header)));
+            txtConversation.Invoke((Action)(() => txtConversation.AppendText("  " + message + " \r\n")));
         }
 
     }
