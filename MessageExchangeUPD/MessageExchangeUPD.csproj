@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UDPIntegration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\UPDIntegration\UPDIntegration\bin\Release\UDPIntegration.dll</HintPath>
+      <HintPath>..\..\UPDIntegration\UPDIntegration\bin\Release\UDPIntegration.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
