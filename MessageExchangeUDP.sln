@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageExchangeUPD", "MessageExchangeUPD\MessageExchangeUPD.csproj", "{B601DF4A-1ACD-4211-BB83-1D92DD43B637}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageExchangeUDP", "MessageExchangeUPD\MessageExchangeUDP.csproj", "{B601DF4A-1ACD-4211-BB83-1D92DD43B637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
